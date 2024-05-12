@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "ed3b0bbe-23fc-4f3c-960c-f59373ade3da",
+		"name": "React Interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27738752",
+		"_collection_link": "https://cloudy-resonance-433311.postman.co/workspace/Team-Workspace~947c2735-b29e-4f49-8c79-c1c986532ad1/collection/27738752-ed3b0bbe-23fc-4f3c-960c-f59373ade3da?action=share&source=collection_link&creator=27738752"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "Application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Naimul Hasan\",\r\n    \"email\":\"naim.microdeft@gmail.com2\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://react-interview.1putym.easypanel.host/api/register",
+							"protocol": "https",
+							"host": [
+								"react-interview",
+								"1putym",
+								"easypanel",
+								"host"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "Application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"naim.microdeft@gmail.com2\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://react-interview.1putym.easypanel.host/api/login",
+							"protocol": "https",
+							"host": [
+								"react-interview",
+								"1putym",
+								"easypanel",
+								"host"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blog list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "Application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"This is an example blog\",\r\n    \"description\": \"This is an example blog This is an example blog This is an example blog This is an example blog\",\r\n    \"status\": \"1\" // 1 = active 0 = inacive\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://react-interview.1putym.easypanel.host/api/blog?order_by=asc&order_by_column=title",
+					"protocol": "https",
+					"host": [
+						"react-interview",
+						"1putym",
+						"easypanel",
+						"host"
+					],
+					"path": [
+						"api",
+						"blog"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "update",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "0",
+							"description": "0/1",
+							"disabled": true
+						},
+						{
+							"key": "order_by",
+							"value": "asc",
+							"description": "asc / desc"
+						},
+						{
+							"key": "order_by_column",
+							"value": "title",
+							"description": "title/id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blog details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "Application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"This is an example blog\",\r\n    \"description\": \"This is an example blog This is an example blog This is an example blog This is an example blog\",\r\n    \"status\": \"1\" // 1 = active 0 = inacive\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://react-interview.1putym.easypanel.host/api/blog/12",
+					"protocol": "https",
+					"host": [
+						"react-interview",
+						"1putym",
+						"easypanel",
+						"host"
+					],
+					"path": [
+						"api",
+						"blog",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blog Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|kaBtx0swSc6sE4gGhj1OHreveflfuWK3QzUNKT1L908b60cf",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "Application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"This is an example blog\",\r\n    \"description\": \"This is an example blog This is an example blog This is an example blog This is an example blog\",\r\n    \"status\": \"1\" // 1 = active 0 = inacive\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://react-interview.1putym.easypanel.host/api/blog/15",
+					"protocol": "https",
+					"host": [
+						"react-interview",
+						"1putym",
+						"easypanel",
+						"host"
+					],
+					"path": [
+						"api",
+						"blog",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blog create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|7NpSh3ZM1YFabOnLdoFRDwaFZhTVO7cGGp3VxKRyb0277103",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "Application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"web This is an example blog\",\r\n    \"description\": \"This is an example blog This is an example blog This is an example blog This is an example blog\",\r\n    \"status\": \"1\" // 1 = active 0 = inacive\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://react-interview.1putym.easypanel.host/api/blog",
+					"protocol": "https",
+					"host": [
+						"react-interview",
+						"1putym",
+						"easypanel",
+						"host"
+					],
+					"path": [
+						"api",
+						"blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Blog update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9|7NpSh3ZM1YFabOnLdoFRDwaFZhTVO7cGGp3VxKRyb0277103",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "Application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"This is an example blog update\",\r\n    \"description\": \"This is an example blog This is an example blog This is an example blog This is an example blog\",\r\n    \"status\": \"1\" // 1 = active 0 = inacive\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://react-interview.1putym.easypanel.host/api/blog/15",
+					"protocol": "https",
+					"host": [
+						"react-interview",
+						"1putym",
+						"easypanel",
+						"host"
+					],
+					"path": [
+						"api",
+						"blog",
+						"15"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
